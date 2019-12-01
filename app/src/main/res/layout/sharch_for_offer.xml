@@ -119,26 +119,7 @@
                     android:layout_margin="7dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:gravity="left|top"
-                        android:hint="offre details"
-                        android:inputType="textMultiLine"
-                        android:lines="3"
-                        android:maxLines="10"
-                        android:minLines="3"
-                        android:padding="10dp"
-                        android:scrollbars="vertical"
-                        android:id="@+id/offerBody"
-                        />
-                    />
-
-                </LinearLayout>
+                    android:orientation="vertical"/>
             </TableRow>
 
             <TableRow
