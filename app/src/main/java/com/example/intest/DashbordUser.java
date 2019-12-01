@@ -108,6 +108,6 @@ public class DashbordUser extends AppCompatActivity {
     }
     public void SearchForOffers(View view)
     {
-
+        startActivity(new Intent(DashbordUser.this, SharchForOffer.class));
     }
 }
