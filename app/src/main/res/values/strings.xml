@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">LinkedinApp</string>
+    <string name="dialog_title">Select Offer Domaine</string>
+    <string name="ok_label">OK</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clear_all_label">Uncheck All</string>
+    <string name="nom">Name</string>
+    <string name="offre_title">offre title</string>
+    <string name="select_domoain">Select Offer Domaine</string>
+    <string name="select_type">Select Offer Type</string>
+    <string name="requiremments">Select Offer Requirements</string>
+    <string name="skills_and_experiences">Skills and Experiences</string>
+    <string name="postuler">Apply</string>
+    <string-array name="domaine_item">
+        <item>Mobile Development</item>
+        <item>Electric engerinning</item>
+        <item>Embedded systems Engerinning</item>
+
+    </string-array>
+
+    <string-array name="requirement_item">
+        <item>BAC + 5</item>
+        <item>BAC + 3</item>
+
+    </string-array>
+
+    <string-array name="type_item">
+        <item>stage fin d\'etude</item>
+        <item>stage pre embauche</item>
+        <item>offre d\'emploi</item>
+
+    </string-array>
+
+    <string-array name="skills_item">
+        <item>Java</item>
+        <item>Android</item>
+        <item>Ios</item>
+        <item>Java EE </item>
+        <item>Flutter</item>
+        <item>JavaScript</item>
+    </string-array>
+</resources>
