@@ -152,19 +152,25 @@
                 android:onClick="SearchForOffers"
                />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="25"
-                android:layout_height="wrap_content"
-
-                />
 
 
-
-
-        </LinearLayout>
+                </LinearLayout>
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+    <Button
+        android:id="@+id/sendmeToApplyOffre_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Applay Offers    -->"
+        android:layout_gravity="center_horizontal"
+        android:onClick="sendMeToApply"
+        />
 
 </LinearLayout>

@@ -110,4 +110,19 @@ public class DashbordUser extends AppCompatActivity {
     {
         startActivity(new Intent(DashbordUser.this, SharchForOffer.class));
     }
+
+
+
+
+    /* Delet this whrn finish */
+
+        public void sendMeToApply(View view) {
+        startActivity(new Intent(DashbordUser.this, ApplayAnOffre.class));
+        }
+
+
+
+
+
+
 }

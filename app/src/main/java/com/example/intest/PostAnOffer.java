@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -290,6 +291,25 @@ OfferDetailtsView=findViewById(R.id.offerBody);
             int offeridint=Integer.valueOf(offerid);
             offeridint++;offerid=String.valueOf(offeridint);offerIdRef.setValue(offerid);
 
+
+            /************ Start Dialoge ********** */
+
+
+            new AlertDialog.Builder(PostAnOffer.this)
+                    .setTitle("Post ")
+                    .setMessage("Your post is uploaded successfully !")
+                    .setCancelable(false)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent =new Intent( PostAnOffer.this, DashbordUser.class);
+                            startActivity(intent);
+                        }
+                    })
+
+                    // A null listener allows the button to dismiss the dialog and take no further action.
+                    //.setNegativeButton(android.R.string.no, null)
+                    .setIcon(R.drawable.chekicon)
+                    .show();
         }
     }
     private void showListItemes(final String[] itemsResTab, final TextView textView){
