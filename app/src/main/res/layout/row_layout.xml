@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+
+    android:background="#BBc2c2a3"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+
+    >
+
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="20dp"
+        android:layout_weight="0"
+     ></ImageView>
+
+    <TextView
+        android:id="@+id/OfferTitleId"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:hint="message"
+        android:maxWidth="147dp"
+        android:maxLines="1"
+        android:textColor="#000"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/MatchinAvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="22/11/19 :22:25"
+        android:textSize="15dp"
+        android:textColor="#ff0000"
+        android:layout_weight="20"/>
+
+
+</LinearLayout>

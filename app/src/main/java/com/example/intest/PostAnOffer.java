@@ -252,7 +252,7 @@ OfferDetailtsView=findViewById(R.id.offerBody);
             for(String domain:domainList)
             {
 
-                offerSettingsRef=database.getReference("Offer Domains").child(domain).child("Offer Id");
+                offerSettingsRef=database.getReference("Offer Domains").child(domain).child("Offer Id"+offerid);
                 offerSettingsRef.setValue(offerid);
 
             }
@@ -261,7 +261,7 @@ OfferDetailtsView=findViewById(R.id.offerBody);
             /***Skills ***/
             for(String skill:skillsList)
             {
-                offerSettingsRef=database.getReference("Offer Skills").child(skill).child("Offer Id");
+                offerSettingsRef=database.getReference("Offer Skills").child(skill).child("Offer Id"+offerid);
                 offerSettingsRef.setValue(offerid);
 
             }
@@ -269,7 +269,7 @@ OfferDetailtsView=findViewById(R.id.offerBody);
             /***Requirements ***/
             for(String requirement:reqList)
             {
-                offerSettingsRef=database.getReference("Offer Requirements").child(requirement).child("Offer Id");
+                offerSettingsRef=database.getReference("Offer Requirements").child(requirement).child("Offer Id"+offerid);
                 offerSettingsRef.setValue(offerid);
 
             }
@@ -277,7 +277,7 @@ OfferDetailtsView=findViewById(R.id.offerBody);
             /***offer Type ***/
             for(String type:typeList)
             {
-                offerSettingsRef=database.getReference("Offer Type").child(type).child("Offer Id");
+                offerSettingsRef=database.getReference("Offer Type").child(type).child("Offer Id"+offerid);
                 offerSettingsRef.setValue(offerid);
 
             }
