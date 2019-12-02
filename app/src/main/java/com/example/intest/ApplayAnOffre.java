@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -53,10 +54,10 @@ public class ApplayAnOffre extends AppCompatActivity {
 
 
     /* offer id */
-    String OffreId="1";
+    String OffreId;
 
     /*current use id */
-    String userId="PrCQ7QHDMl";
+    String userId;
 
 
     Uri uri;
@@ -83,26 +84,24 @@ public class ApplayAnOffre extends AppCompatActivity {
     public Map<String, String> EmpMap= new HashMap<>();
 
 
+
+
+    private SharedPreferences userinfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applay_an_offre);
 
-        /* Employer info  */
-        EmployerFirstName =(TextView) findViewById(R.id.Employer_FirstNameId);
-        EmployerLastName =(TextView) findViewById(R.id.Employer_LastNameId);
-        EmployerEmaile =(TextView) findViewById(R.id.Employer_EmailId);
-        EmployerImage =(ImageView) findViewById(R.id.Employer_ImageId) ;
 
 
-        /* offre details */
-
-        OffreTitle =(TextView) findViewById(R.id.Emploer_OffreTittleId);
-        OffreDescription =(TextView) findViewById(R.id.Employer_OfferBodyId);
-
-
-        uploadImag =(Button) findViewById(R.id.UplodCv_BtnId);
-        applayButton =(Button) findViewById(R.id.applay_Btn);
+         userinfo=getSharedPreferences("userinfos", MODE_PRIVATE);
+         userId=userinfo.getString("id",null);
+         Intent intent=getIntent();
+         if(intent!=null)
+         {
+             OffreId=intent.getStringExtra("offerId");
+         }
+         instantiateviews();
 
 
         progressDialog =new ProgressDialog(this);
@@ -144,7 +143,6 @@ public class ApplayAnOffre extends AppCompatActivity {
 
 
     }
-
     void uploadCv(){
 
         String reposetry = "offer_"+OffreId;
@@ -186,10 +184,6 @@ public class ApplayAnOffre extends AppCompatActivity {
             Toast.makeText(ApplayAnOffre.this, "Pleas select a pdf !",Toast.LENGTH_LONG).show();
         }
     }
-
-
-
-
     public void getOffre(String offerId ) {
         offerRef = database.getReference().child("Offers").child(offerId) ;
         offerRef.addValueEventListener(new ValueEventListener() {
@@ -214,7 +208,6 @@ public class ApplayAnOffre extends AppCompatActivity {
             }
         });
     }
-
     public void getEmplyer(String employerId ) {
 
         EmployerRef = database.getReference().child("Users").child(employerId) ;
@@ -283,5 +276,24 @@ public class ApplayAnOffre extends AppCompatActivity {
                 return true;
             }else {
                 return false;}
+    }
+
+    public void instantiateviews()
+    {
+        EmployerFirstName =(TextView) findViewById(R.id.Employer_FirstNameId);
+        EmployerLastName =(TextView) findViewById(R.id.Employer_LastNameId);
+        EmployerEmaile =(TextView) findViewById(R.id.Employer_EmailId);
+        EmployerImage =(ImageView) findViewById(R.id.Employer_ImageId) ;
+
+
+        /* offre details */
+
+        OffreTitle =(TextView) findViewById(R.id.Emploer_OffreTittleId);
+        OffreDescription =(TextView) findViewById(R.id.Employer_OfferBodyId);
+
+
+        uploadImag =(Button) findViewById(R.id.UplodCv_BtnId);
+        applayButton =(Button) findViewById(R.id.applay_Btn);
+
     }
 }

@@ -116,9 +116,7 @@ public class DashbordUser extends AppCompatActivity {
 
     /* Delet this whrn finish */
 
-        public void sendMeToApply(View view) {
-        startActivity(new Intent(DashbordUser.this, ApplayAnOffre.class));
-        }
+
 
 
 

@@ -45,6 +45,7 @@ public class SharchForOffer extends AppCompatActivity {
     public List<String> skillsList;
     public Boolean firstTime=true;
     Handler handler = new Handler();
+    public CountDownLatch done;
 
     /*----  Domaine ----*/
     TextView domaineItemSelected;
@@ -740,6 +741,7 @@ public class SharchForOffer extends AppCompatActivity {
     private void matchingJob()
     {
         double matchingScore=0;
+
     for (String domain: ListIdsDomaine)
     {
         if(ListIdsRequirements.contains(domain))
@@ -778,7 +780,7 @@ public class SharchForOffer extends AppCompatActivity {
             @Override
             public void run() {
 
-                if(MatchingJobsIdsAndTitles.size()==0)
+                if(MatchingJobsIdsAndTitles.size()<ListIdsDomaine.size())
                 {
                     handler.post(this);
 
@@ -801,7 +803,7 @@ public class SharchForOffer extends AppCompatActivity {
     public void getOfferTitle(final String id)
     {
         offerSettingsRef=database.getReference("Offers").child(id).child("Title");
-        offerSettingsRef.addValueEventListener(new ValueEventListener() {
+        offerSettingsRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
@@ -816,6 +818,7 @@ public class SharchForOffer extends AppCompatActivity {
 
             }
         });
+
     }
 
 

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,8 @@ public class ListOfMatchingOffers extends AppCompatActivity implements MyRecycle
     HashMap<String,String> MatchingJobsIdsAndTitles=new HashMap<>();
     List<String> OfferTitlesList ;
     List<String> OfferAverageList ;
+    List<String> OfferAverageListCopy ;
+    List<String> OfferIdsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +33,19 @@ public class ListOfMatchingOffers extends AppCompatActivity implements MyRecycle
             MatchingJobsIdsAndTitles=(HashMap<String, String>)intent.getSerializableExtra("MatchingJobsIdsAndTitles");
             OfferAverageList=new ArrayList<>(MatchingJobsAndAverage.values());
             OfferTitlesList=new ArrayList<>(MatchingJobsIdsAndTitles.values());
+            OfferIdsList=new ArrayList<>(MatchingJobsIdsAndTitles.keySet());
         }
-        Log.d("zbikhl",OfferTitlesList.get(0)+" and size ="+OfferTitlesList.size());
+
+      //  sort();
         setRecycle();
     }
 
     @Override
     public void onItemClick(View view, int position) {
-
+        Toast.makeText(ListOfMatchingOffers.this,"Id "+OfferIdsList.get(position),Toast.LENGTH_LONG).show();
+        Intent intent =new Intent(ListOfMatchingOffers.this,ApplayAnOffre.class);
+        intent.putExtra("offerId",OfferIdsList.get(position));
+        startActivity(intent);
     }
     public void setRecycle()
     {
@@ -47,5 +55,30 @@ public class ListOfMatchingOffers extends AppCompatActivity implements MyRecycle
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
+    }
+    public void sort()
+    {OfferAverageListCopy=new ArrayList<>(MatchingJobsAndAverage.values());
+        double lastAv=0;
+        int index=0;
+        for (String average:OfferAverageListCopy)
+        {
+            double avInDouble=Double.valueOf(average.trim());
+            if(avInDouble>=lastAv)
+            {
+                lastAv=avInDouble;
+                index=OfferAverageList.indexOf(average);
+
+
+                OfferAverageList.remove(index);
+                OfferAverageList.add(0,average);
+
+                OfferTitlesList.remove(index);
+                OfferTitlesList.add(0,average);
+
+                OfferIdsList.remove(index);
+                OfferIdsList.add(0,average);
+            }
+
+        }
     }
 }
