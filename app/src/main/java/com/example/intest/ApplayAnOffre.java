@@ -59,6 +59,9 @@ public class ApplayAnOffre extends AppCompatActivity {
     /*current use id */
     String userId;
 
+  /*current use id */
+    String EmployerId;
+
 
     Uri uri;
 
@@ -145,7 +148,7 @@ public class ApplayAnOffre extends AppCompatActivity {
     }
     void uploadCv(){
 
-        String reposetry = "offer_"+OffreId;
+        String reposetry = "offer_"+EmployerId;
         if(!(uri==null)) {
 
             if(accept()){
@@ -197,6 +200,7 @@ public class ApplayAnOffre extends AppCompatActivity {
                 String title= map.get("Title");
                 OffreTitle.setText(title);
                 OffreDescription.setText(detail);
+                EmployerId=id;
                 getEmplyer(id);
                // Log.d("mydata","details" + detail + "id " + id + " title" + title );
 
