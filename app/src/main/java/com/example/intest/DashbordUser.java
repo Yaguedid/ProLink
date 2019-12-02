@@ -96,7 +96,8 @@ public class DashbordUser extends AppCompatActivity {
                 Toast.makeText(DashbordUser.this,"item1",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.item2:
-                Toast.makeText(DashbordUser.this,"item2",Toast.LENGTH_SHORT).show();
+              startActivity(new Intent(DashbordUser.this,MyInbox.class));
+
                 return true;
 
         }
