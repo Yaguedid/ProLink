@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="FlatButton" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/myYellow</item>
+        <item name="colorControlHighlight">@color/myRed</item>
+    </style>
+
 </resources>

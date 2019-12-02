@@ -3,6 +3,10 @@
     package="com.example.intest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission  android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission  android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SharchForOffer"></activity>
+        <activity android:name=".ApplayAnOffre"></activity>
+        <activity android:name=".SharchForOffer" />
         <activity android:name=".DashbordUser" />
         <activity android:name=".WelcomeScreen" />
         <activity android:name=".NewLinkedInIntegration">
