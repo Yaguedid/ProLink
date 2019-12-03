@@ -8,7 +8,7 @@
     tools:context=".PostAnOffer"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="#AAff9999"
+
     >
 
     <LinearLayout
@@ -52,11 +52,19 @@
                 />
             <Button
                 android:id="@+id/amStudent"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:text="I am a Student"
-                android:layout_gravity="center_horizontal"
+                android:text="I am student"
+                android:theme="@style/FlatButton"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:background="@color/myWeight"
+                android:textColor="#1f1f7a"
+                android:fontFamily="@font/dancing_script"
+                android:textSize="17dp"
+                android:drawableRight="@drawable/student_icon"
+                android:layout_marginBottom="10dp"
+
+
                 android:onClick="amStudent"
                 />
             <LinearLayout
@@ -84,11 +92,18 @@
                 />
             <Button
                 android:id="@+id/amEmployer"
-                android:layout_width="0dp"
-                android:layout_weight="50"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I AM AN Employer"
-                android:layout_gravity="center_horizontal"
+                android:text="I am employer"
+                android:theme="@style/FlatButton"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:background="@color/myWeight"
+                android:textColor="#1f1f7a"
+                android:fontFamily="@font/dancing_script"
+                android:textSize="17dp"
+
+               android:drawableRight="@drawable/employer_icon"
+
                 android:onClick="amEmployer"
                 />
 
