@@ -17,25 +17,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Settings"></activity>
-        <activity android:name=".InboxForStudents" />
-        <activity android:name=".StudentOrEmployer" />
-        <activity android:name=".InboxForEmployers" />
-        <activity android:name=".VeryFirstActivity">
+        <activity android:name=".InboxForStudents"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".StudentOrEmployer"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".InboxForEmployers"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".VeryFirstActivity"
+            android:theme="@style/AppTheme2">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ApplayAnOffre" />
-        <activity android:name=".SharchForOffer" />
-        <activity android:name=".DashbordUser" />
-        <activity android:name=".ListOfMatchingOffers" />
+        <activity android:name=".ApplayAnOffre"  android:theme="@style/AppTheme2"/>
+        <activity android:name=".SharchForOffer"
+            android:theme="@style/AppTheme2"
+            />
+        <activity android:name=".DashbordUser"
+
+            />
+        <activity android:name=".ListOfMatchingOffers"
+            android:theme="@style/AppTheme2"
+            />
         <activity android:name=".WelcomeScreen"
             android:theme="@style/AppTheme2"
             ></activity>
         <activity android:name=".NewLinkedInIntegration" />
-        <activity android:name=".PostAnOffer" />
+        <activity android:name=".PostAnOffer"
+            android:theme="@style/AppTheme2"
+            />
     </application>
 
 </manifest>

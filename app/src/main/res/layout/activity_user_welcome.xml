@@ -26,7 +26,7 @@
             android:text="Welcome"
             android:textSize="30dp"
             android:gravity="center"
-            android:layout_weight="25"
+            android:layout_weight="35"
             android:textColor="#3385ff"
             android:layout_marginBottom="-90dp"
             android:textStyle="bold"
@@ -40,18 +40,20 @@
             android:textSize="30dp"
 
             android:gravity="center"
-            android:layout_weight="25"
+            android:layout_weight="35"
             android:textColor="#000"
             android:textStyle="bold"
             android:fontFamily="@font/dancing_script"
             app:fontFamily="@font/dancing_script"/>
 
-        <ImageView
-
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/userimg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
+            android:layout_weight="30"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"
 
             />
 

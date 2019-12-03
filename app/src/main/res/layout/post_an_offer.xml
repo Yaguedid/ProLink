@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#AAff9999"
+
     tools:context=".PostAnOffer">
 
     <RelativeLayout
@@ -19,7 +19,11 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp"
+                android:padding="10dp"
+                android:paddingLeft="10dp"
+                android:background="#AAb8b894"
 
                 >
 
@@ -31,11 +35,14 @@
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
 
-                    <ImageView
 
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/imageViewId"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"
                         />
 
 
@@ -52,13 +59,17 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:layout_weight="50">
+                        android:layout_weight="50"
+                        android:background="#AAff9900">
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/nom"
+                            android:layout_height="wrap_content"
+                            android:text="Nom "
+                            android:textStyle="bold|italic"
+
+
+                            android:paddingBottom="5dp"
                             android:id="@+id/FirstNameId"
                             />
 
@@ -68,12 +79,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="50"
-                        android:gravity="center_horizontal|center_vertical">
+                        android:layout_marginTop="10dp"
+                        android:background="#AAff9900">
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="Prnnom "
+                            android:textStyle="bold|italic"
                             android:id="@+id/LastNameId"
                             />
                     </TableRow>
@@ -94,6 +107,7 @@
                     android:orientation="vertical"
                     android:gravity="center_horizontal"
                     android:layout_margin="20dp"
+                    android:background="#AAb8b894"
                     >
                     <EditText
 
@@ -101,6 +115,8 @@
                         android:layout_height="match_parent"
                         android:id="@+id/id_TittleOffre"
                         android:hint="@string/offre_title"
+                        android:textColor="#000"
+                        android:textStyle="bold|italic"
                         android:background="@android:color/transparent"
                         />
 
@@ -126,7 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@android:color/transparent"
+                        android:background="#AAb8b894"
                         android:gravity="left|top"
                         android:hint="offre details"
                         android:inputType="textMultiLine"
@@ -136,6 +152,8 @@
                         android:padding="10dp"
                         android:scrollbars="vertical"
                         android:id="@+id/offerBody"
+                        android:textColor="#000"
+
                         />
                     />
 
@@ -166,7 +184,11 @@
                         android:theme="@style/FlatButton"
                         style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:background="@color/myWeight"
-                        android:textColor="@color/myDark"
+                        android:textColor="#1f1f7a"
+                        android:fontFamily="@font/dancing_script"
+                        android:textSize="17dp"
+                        android:drawableRight="@drawable/three_dots"
+
 
                         />
 
@@ -205,7 +227,10 @@
                         android:theme="@style/FlatButton"
                         style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:background="@color/myWeight"
-                        android:textColor="@color/myDark"
+                        android:textColor="#1f1f7a"
+                        android:fontFamily="@font/dancing_script"
+                        android:textSize="17dp"
+                        android:drawableRight="@drawable/three_dots"
                         />
 
                     <TextView
@@ -243,7 +268,10 @@
                         android:theme="@style/FlatButton"
                         style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:background="@color/myWeight"
-                        android:textColor="@color/myDark"
+                        android:textColor="#1f1f7a"
+                        android:fontFamily="@font/dancing_script"
+                        android:textSize="17dp"
+                        android:drawableRight="@drawable/three_dots"
                         />
 
                     <TextView
@@ -251,6 +279,7 @@
                         android:layout_height="match_parent"
                         android:id="@+id/id_TextRequiremments"
                         android:textColor="@color/colorPrimary"
+
                         />
 
                 </LinearLayout>
@@ -281,7 +310,10 @@
                         android:theme="@style/FlatButton"
                         style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:background="@color/myWeight"
-                        android:textColor="@color/myDark"
+                        android:textColor="#1f1f7a"
+                        android:fontFamily="@font/dancing_script"
+                        android:textSize="17dp"
+                        android:drawableRight="@drawable/three_dots"
                         />
 
                     <TextView
