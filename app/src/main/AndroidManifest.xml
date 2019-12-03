@@ -37,7 +37,6 @@
             android:theme="@style/AppTheme2"
             />
         <activity android:name=".DashbordUser"
-
             />
         <activity android:name=".ListOfMatchingOffers"
             android:theme="@style/AppTheme2"
