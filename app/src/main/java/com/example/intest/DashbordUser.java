@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.io.InputStream;
 
 public class DashbordUser extends AppCompatActivity {
-    private String EmailUser,FisrtnameUser,LastNameUser,IdUser,PictureUser;
+    private String EmailUser,FisrtnameUser,LastNameUser,IdUser,PictureUser,StudentOrEmployer;
     private SharedPreferences userinfo;
     Button PostAnOfferButton,SearchForAnOffer;
     TextView FirstNameUserView,LastNameUserView;
@@ -38,7 +38,7 @@ public class DashbordUser extends AppCompatActivity {
         LastNameUser=userinfo.getString("lastname",null);
         IdUser=userinfo.getString("id",null);
         PictureUser=userinfo.getString("picture",null);
-
+        StudentOrEmployer=userinfo.getString("StudentOrEmployer",null);
 
 
         instantiateViews();
@@ -47,6 +47,10 @@ public class DashbordUser extends AppCompatActivity {
     private void instantiateViews() {
         PostAnOfferButton=findViewById(R.id.searchForOffer);
         SearchForAnOffer=findViewById(R.id.postOffer);
+        if(StudentOrEmployer.equals("Student"))
+            SearchForAnOffer.setVisibility(View.INVISIBLE);
+        if(StudentOrEmployer.equals("Employer"))
+            PostAnOfferButton.setVisibility(View.INVISIBLE);
         FirstNameUserView=findViewById(R.id.FirstNameUser);
         LastNameUserView=findViewById(R.id.LastNameUser);
         userImage=findViewById(R.id.UserImage);
@@ -92,13 +96,19 @@ public class DashbordUser extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
         {
-            case R.id.item1:
+            case R.id.myOffers:
                 Toast.makeText(DashbordUser.this,"item1",Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.item2:
-              startActivity(new Intent(DashbordUser.this,MyInbox.class));
-
+            case R.id.myInbox:
+                if(StudentOrEmployer.equals("Student"))
+                    startActivity(new Intent(DashbordUser.this, InboxForStudents.class));
+                if(StudentOrEmployer.equals("Employer"))
+                    startActivity(new Intent(DashbordUser.this, InboxForEmployers.class));
                 return true;
+            case R.id.settings:
+                startActivity(new Intent(DashbordUser.this, Settings.class));
+                return true;
+
 
         }
         return super.onOptionsItemSelected(item);
@@ -113,6 +123,9 @@ public class DashbordUser extends AppCompatActivity {
     }
 
 
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(DashbordUser.this,WelcomeScreen.class));
+    }
 }

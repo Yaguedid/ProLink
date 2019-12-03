@@ -11,43 +11,42 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class MyRecyclerViewAdapterForListMatchingOffers extends RecyclerView.Adapter<MyRecyclerViewAdapterForListMatchingOffers.ViewHolder> {
+public class MyRecyclerViewAdapterForMyInbox  extends RecyclerView.Adapter<MyRecyclerViewAdapterForMyInbox.ViewHolder> {
 
-    private List<String> OfferTitle;
+    private List<String> NameOfCandidate;
     private List<String> MatchingAvList;
     private LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
+    private MyRecyclerViewAdapterForMyInbox.ItemClickListener mClickListener;
     private static DecimalFormat df2 = new DecimalFormat("#.#");
 
     // data is passed into the constructor
-    MyRecyclerViewAdapterForListMatchingOffers(Context context, List<String> data, List<String> matchingAv) {
-
+    MyRecyclerViewAdapterForMyInbox(Context context, List<String> data, List<String> matchingAv) {
         this.mInflater = LayoutInflater.from(context);
-        this.OfferTitle = data;
+        this.NameOfCandidate = data;
         this.MatchingAvList=matchingAv;
     }
 
     // inflates the row layout from xml when needed
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyRecyclerViewAdapterForMyInbox.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.row_layout, parent, false);
-        return new ViewHolder(view);
+        return new MyRecyclerViewAdapterForMyInbox.ViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        String offerTitle = OfferTitle.get(position);
+    public void onBindViewHolder(MyRecyclerViewAdapterForMyInbox.ViewHolder holder, int position) {
+        String candidateName = NameOfCandidate.get(position);
         String average=MatchingAvList.get(position);
-        holder.offerIdTitleView.setText(offerTitle);
+        holder.offerIdTitleView.setText(candidateName);
         double avragedouble=Double.valueOf(average);
-        holder.matchingOfferAv.setText(df2.format(avragedouble) + "%");
+        holder.matchingOfferAv.setText(df2.format(avragedouble)+"%");
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return OfferTitle.size();
+        return NameOfCandidate.size();
     }
 
 
@@ -72,11 +71,12 @@ public class MyRecyclerViewAdapterForListMatchingOffers extends RecyclerView.Ada
 
     // convenience method for getting data at click position
     String getItem(int id) {
-        return OfferTitle.get(id);
+        return NameOfCandidate.get(id);
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
+    void setClickListener(MyRecyclerViewAdapterForMyInbox.ItemClickListener
+    itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

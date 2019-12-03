@@ -45,6 +45,7 @@ public class ListOfMatchingOffers extends AppCompatActivity implements MyRecycle
         Toast.makeText(ListOfMatchingOffers.this,"Id "+OfferIdsList.get(position),Toast.LENGTH_LONG).show();
         Intent intent =new Intent(ListOfMatchingOffers.this,ApplayAnOffre.class);
         intent.putExtra("offerId",OfferIdsList.get(position));
+        intent.putExtra("averageMatching",OfferAverageList.get(position));
         startActivity(intent);
     }
     public void setRecycle()

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".PostAnOffer"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="#AAff9999"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="50"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="50"
+        android:weightSum="100"
+        android:orientation="vertical"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:weightSum="100"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="25"
+                android:layout_height="wrap_content"
+
+                />
+            <Button
+                android:id="@+id/amStudent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="I am a Student"
+                android:layout_gravity="center_horizontal"
+                android:onClick="amStudent"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="25"
+                android:layout_height="wrap_content"
+
+                />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:weightSum="100"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="25"
+                android:layout_height="wrap_content"
+
+                />
+            <Button
+                android:id="@+id/amEmployer"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"
+                android:text="I AM AN Employer"
+                android:layout_gravity="center_horizontal"
+                android:onClick="amEmployer"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

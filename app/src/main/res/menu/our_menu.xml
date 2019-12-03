@@ -4,12 +4,13 @@
 <item
     android:icon="@drawable/settings_icon"
     android:title="item1"
+    android:id="@+id/settings"
     app:showAsAction="ifRoom"
     >
 
 
 </item>
-    <item android:id="@+id/item1"
+    <item android:id="@+id/myOffers"
         android:icon="@drawable/settings_icon"
         android:title="My Offers"
         app:showAsAction="never"
@@ -17,7 +18,7 @@
 
         ></item>
 
-<item android:id="@+id/item2"
+<item android:id="@+id/myInbox"
 android:icon="@drawable/myicon"
 android:title="My inbox"
 app:showAsAction="never"

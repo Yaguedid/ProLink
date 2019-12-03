@@ -19,4 +19,10 @@ public class VeryFirstActivity extends AppCompatActivity {
         Intent intent=new Intent(VeryFirstActivity.this,NewLinkedInIntegration.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+    }
 }

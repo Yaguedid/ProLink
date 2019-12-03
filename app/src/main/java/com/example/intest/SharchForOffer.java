@@ -27,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.InputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -88,6 +89,7 @@ public class SharchForOffer extends AppCompatActivity {
     private final int typeofOfferFactor=2;
     private final int skillsOfferFactor=1;
     private final int RequiOfferFactor=3;
+
    HashMap<String,String> MatchingJobsAndAverage=new HashMap<>();
     HashMap<String,String> MatchingJobsIdsAndTitles=new HashMap<>();
 

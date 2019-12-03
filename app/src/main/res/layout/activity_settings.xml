@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#AAff9999"
+    tools:context=".PostAnOffer">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="50"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="30dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Am employer"
+                        android:onClick="amEmployer"
+                        ></Button>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="50"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="30dp">
+
+
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Am Student"
+                            android:onClick="amStudent"
+                            ></Button>
+
+
+
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+                />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/id_TextDomaine"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/id_TextType"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/id_TextRequiremments"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/id_TextSkills"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="100"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="7dp"
+                    >
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="450dp"
+                        android:text="Apply settings"
+                        android:onClick="ApplySettings"
+                        ></Button>
+
+                </LinearLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

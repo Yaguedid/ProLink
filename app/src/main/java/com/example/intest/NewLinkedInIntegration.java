@@ -71,6 +71,7 @@ public class NewLinkedInIntegration extends Activity {
     private ProgressDialog pd;
     String deviceId, location, country;
     String linkedInUserId, linkedInUserFirstName, linkedInUserLastName, linkedInUserProfile;
+    public String StudentOrEmployer="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -302,7 +303,7 @@ public class NewLinkedInIntegration extends Activity {
         if(linkedInUserFirstName!=null && linkedInUserLastName!=null &&
                 linkedInUserId!=null &&  linkedInUserProfile!=null )
         {
-            Intent intent=new Intent(NewLinkedInIntegration.this, WelcomeScreen.class);
+            StudentOrEmployer=userinfo.getString("StudentOrEmployer",null);
             myeditor=userinfo.edit();
             myeditor.putString("firstname",linkedInUserFirstName);
             myeditor.putString("lastname",linkedInUserLastName);
@@ -310,7 +311,12 @@ public class NewLinkedInIntegration extends Activity {
             myeditor.putString("picture",linkedInUserProfile);
             myeditor.putString("email",linkedInUserEmailAddress)  ;
             myeditor.apply();
-            startActivity(intent);
+            if(StudentOrEmployer==null)
+                startActivity(new Intent(NewLinkedInIntegration.this, StudentOrEmployer.class));
+            else
+                startActivity(new Intent(NewLinkedInIntegration.this, WelcomeScreen.class));
+
+
 
 
 

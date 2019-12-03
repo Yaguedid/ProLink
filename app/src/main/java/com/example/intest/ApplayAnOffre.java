@@ -67,8 +67,8 @@ public class ApplayAnOffre extends AppCompatActivity {
 
     /* Databes Firebas */
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference offerRef;
-    DatabaseReference EmployerRef;
+    DatabaseReference offerRef,EmployerRef,appliedOffersRef;
+
 
 
 
@@ -90,6 +90,7 @@ public class ApplayAnOffre extends AppCompatActivity {
 
 
     private SharedPreferences userinfo;
+    String averageMatching;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +104,7 @@ public class ApplayAnOffre extends AppCompatActivity {
          if(intent!=null)
          {
              OffreId=intent.getStringExtra("offerId");
+             averageMatching=intent.getStringExtra("averageMatching");
          }
          instantiateviews();
 
@@ -165,7 +167,7 @@ public class ApplayAnOffre extends AppCompatActivity {
 
                             new AlertDialog.Builder(ApplayAnOffre.this)
                                     .setTitle("Post ")
-                                    .setMessage("Your applay finished successfully !")
+                                    .setMessage("Your request is applied successfully !")
                                     .setCancelable(false)
                                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int which) {
@@ -180,11 +182,20 @@ public class ApplayAnOffre extends AppCompatActivity {
                                     .show();
                         }
                     });
+                /************ Store in firebase realtime storage ********** */
+
+                appliedOffersRef=database.getReference("EmployersInbox").child(EmployerId).child(userId);
+                appliedOffersRef.setValue(averageMatching);
+
+
+
+
+
             }else {
                 Toast.makeText(ApplayAnOffre.this, "Only PDF format is accepted!",Toast.LENGTH_LONG).show();
             }
         }else {
-            Toast.makeText(ApplayAnOffre.this, "Pleas select a pdf !",Toast.LENGTH_LONG).show();
+            Toast.makeText(ApplayAnOffre.this, "Please select a pdf !",Toast.LENGTH_LONG).show();
         }
     }
     public void getOffre(String offerId ) {

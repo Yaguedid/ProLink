@@ -91,4 +91,10 @@ private SharedPreferences userinfo;
         Intent intent=new Intent(WelcomeScreen.this,DashbordUser.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(WelcomeScreen.this,VeryFirstActivity.class));
+    }
 }
