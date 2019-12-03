@@ -57,7 +57,7 @@ private SharedPreferences userinfo;
     private void instantiateViews() {
         welcomeText=findViewById(R.id.welcometext);
         userImage=findViewById(R.id.userimg);
-        welcomeText.setText("Welcome "+FisrtnameUser+" "+LastNameUser);
+        welcomeText.setText(FisrtnameUser+" "+LastNameUser);
         new DownloadImageTask((ImageView)userImage)
                 .execute(PictureUser);
 

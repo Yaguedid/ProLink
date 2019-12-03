@@ -12,6 +12,7 @@
     android:layout_width="300dp"
     android:layout_height="80dp"
     android:text="Login"
+    android:background="@drawable/linkedinlogin"
     android:onClick="sign"
     >
 

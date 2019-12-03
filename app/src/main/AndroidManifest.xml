@@ -31,7 +31,9 @@
         <activity android:name=".SharchForOffer" />
         <activity android:name=".DashbordUser" />
         <activity android:name=".ListOfMatchingOffers" />
-        <activity android:name=".WelcomeScreen" />
+        <activity android:name=".WelcomeScreen"
+            android:theme="@style/AppTheme2"
+            ></activity>
         <activity android:name=".NewLinkedInIntegration" />
         <activity android:name=".PostAnOffer" />
     </application>
