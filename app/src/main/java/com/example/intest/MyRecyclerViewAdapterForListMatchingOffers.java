@@ -22,6 +22,7 @@ public class MyRecyclerViewAdapterForListMatchingOffers extends RecyclerView.Ada
     // data is passed into the constructor
     MyRecyclerViewAdapterForListMatchingOffers(Context context, List<String> data, List<String> matchingAv) {
 
+
         this.mInflater = LayoutInflater.from(context);
         this.OfferTitle = data;
         this.MatchingAvList=matchingAv;

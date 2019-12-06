@@ -113,6 +113,7 @@ userinfo=getSharedPreferences("userinfos", MODE_PRIVATE);
 /*********************************************/
 
     }
+
 public void instanciateViews()
 {
 FirstNameView=findViewById(R.id.FirstNameId);
