@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/settings_icon"
+        android:title="item1"
+        android:id="@+id/settings"
+        app:showAsAction="ifRoom"
+        />
+        <item android:id="@+id/myInbox"
+            android:icon="@drawable/settings_icon"
+            android:title="My Inbox"
+            app:showAsAction="never"
+
+
+            ></item>
+
+        <item android:id="@+id/myCv"
+            android:icon="@drawable/myicon"
+            android:title="My cv"
+            app:showAsAction="never"
+            ></item>
+    <item android:id="@+id/advanced_shearch"
+        android:icon="@drawable/myicon"
+        android:title="advanced shearch"
+        app:showAsAction="never"
+        ></item>
+
+
+    </menu>

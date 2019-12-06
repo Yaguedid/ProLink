@@ -88,29 +88,54 @@ public class DashbordUser extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.our_menu,menu);
+        if(StudentOrEmployer.equals("Student"))
+        {
+            inflater.inflate(R.menu.menu_student,menu);
+        }else{
+            inflater.inflate(R.menu.our_menu,menu);
+        }
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
+        if(StudentOrEmployer.equals("Student"))
         {
-            case R.id.myOffers:
-                Toast.makeText(DashbordUser.this,"item1",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.myInbox:
-                if(StudentOrEmployer.equals("Student"))
-                    startActivity(new Intent(DashbordUser.this, InboxForStudents.class));
-                if(StudentOrEmployer.equals("Employer"))
-                    startActivity(new Intent(DashbordUser.this, InboxForEmployers.class));
-                return true;
-            case R.id.settings:
-                startActivity(new Intent(DashbordUser.this, Settings.class));
-                return true;
-
-
+            switch (item.getItemId())
+            {
+                case R.id.myCv:
+                    Toast.makeText(DashbordUser.this,"myCv",Toast.LENGTH_SHORT).show();
+                    return true;
+                case R.id.myInbox:
+                    startActivity(new Intent(DashbordUser.this,InboxForStudents.class));
+                    return true;
+                case R.id.settings:
+                    startActivity(new Intent(DashbordUser.this,Settings.class));
+                    return true;
+                case R.id.advanced_shearch:
+                   startActivity(new Intent(DashbordUser.this,SharchForOffer.class));
+                    return true;
+            }
         }
+        else
+        {
+            switch (item.getItemId())
+            {
+                case R.id.myOffers:
+                    Toast.makeText(DashbordUser.this,"item1",Toast.LENGTH_SHORT).show();
+                    return true;
+                case R.id.myInbox:
+                        startActivity(new Intent(DashbordUser.this, InboxForStudents.class));
+                    return true;
+                case R.id.settings:
+                    startActivity(new Intent(DashbordUser.this, Settings.class));
+                    return true;
+
+
+            }
+        }
+
         return super.onOptionsItemSelected(item);
     }
     public void postAnOffer(View view)

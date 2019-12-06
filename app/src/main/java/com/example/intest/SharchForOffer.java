@@ -85,6 +85,7 @@ public class SharchForOffer extends AppCompatActivity {
     List<String> ListIdsSkills = new ArrayList<>();
     List<String> ListOfMatchingJobs = new ArrayList<>();
     List<Double> ListOfIndexes=new ArrayList<>();
+
    private final int maxMatchingPoints=11;
     private final int typeofOfferFactor=2;
     private final int skillsOfferFactor=1;
